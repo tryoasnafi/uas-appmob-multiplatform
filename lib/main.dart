@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'views/home_page.dart';
+import 'views/home_view.dart';
 
 void main() {
   runApp(MyApp());
@@ -17,7 +17,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-      home: HomePage(),
+      home: HomeView(),
     );
   }
 }

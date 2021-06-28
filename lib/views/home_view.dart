@@ -4,16 +4,16 @@ import '../models/news.dart';
 import '../services/api_service.dart';
 import '../widgets/customListTile.dart';
 
-class HomePage extends StatefulWidget {
+class HomeView extends StatefulWidget {
   final News news;
 
-  const HomePage({Key key, this.news}) : super(key: key);
+  const HomeView({Key key, this.news}) : super(key: key);
 
   @override
-  _HomePageState createState() => _HomePageState();
+  _HomeViewState createState() => _HomeViewState();
 }
 
-class _HomePageState extends State<HomePage> {
+class _HomeViewState extends State<HomeView> {
   Future<List<News>> news;
 
   @override
