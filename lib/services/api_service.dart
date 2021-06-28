@@ -12,13 +12,13 @@ class ApiService {
     if (response.statusCode == 200) {
       Map<String, dynamic> json = jsonDecode(response.body);
 
-      List<dynamic> body = json['news'];
+      List<dynamic> body = json['berita'];
 
       List<News> news = body.map((item) => News.fromJSON(item)).toList();
 
       return news;
     } else {
-      throw Exception("Can't get the News!");
+      throw Exception("${response.statusCode} Can't get the News!");
     }
   }
 
