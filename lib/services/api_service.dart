@@ -1,0 +1,25 @@
+import 'dart:convert';
+
+import 'package:http/http.dart';
+import '../models/news.dart';
+
+class ApiService {
+  final endPointURL = "https://jaroji.web.id/api/news.php";
+
+  Future<List<News>> fetchNews() async {
+    final response = await get(Uri.tryParse(endPointURL));
+
+    if (response.statusCode == 200) {
+      Map<String, dynamic> json = jsonDecode(response.body);
+
+      List<dynamic> body = json['news'];
+
+      List<News> news = body.map((item) => News.fromJSON(item)).toList();
+
+      return news;
+    } else {
+      throw Exception("Can't get the News!");
+    }
+  }
+
+}
